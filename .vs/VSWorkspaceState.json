@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\databases",
+    "\\backend\\databases\\manageDatabase"
   ],
-  "SelectedNode": "\\backend",
+  "SelectedNode": "\\backend\\main.py",
   "PreviewInSolutionExplorer": false
 }
