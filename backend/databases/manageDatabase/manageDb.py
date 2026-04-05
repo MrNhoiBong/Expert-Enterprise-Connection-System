@@ -14,6 +14,13 @@ class ManageDb:
         if worker in self.workers:
             self.workers.remove(worker)
 
-    def notify(self, event: str):
-        for worker in self.workers:
-            worker.handle(event)
+    def notify(self, event, data=None):
+        results = []
+
+        for w in self.workers:
+            if w.can_handle(event):
+                res = w.handle(event, data)
+                if res is not None:
+                    results.append(res)
+
+        return results if results else None
