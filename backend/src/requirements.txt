@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+motor
+cryptography
+pymongo
+neo4j
+minio
