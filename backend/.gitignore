@@ -1,6 +1,0 @@
-.vs/ 
-__pycache__/ 
-*.pyc 
-*.db 
-*.sqlite 
-"sessions.json" 
