@@ -1,0 +1,350 @@
+[{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc57"
+  },
+  "projectID": "PRJ001",
+  "createBy": "EXP001",
+  "createDate": "2025-01-10",
+  "name": "Enterprise Resource Planning System",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-01-15",
+    "end_date": "2025-06-30"
+  },
+  "description": "Development of a scalable ERP system for medium-sized enterprises.",
+  "FoundID": "FND001"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc58"
+  },
+  "projectID": "PRJ002",
+  "createBy": "EXP002",
+  "createDate": "2025-01-12",
+  "name": "Business Intelligence Dashboard",
+  "status": "Completed",
+  "projectTimeline": {
+    "start_date": "2024-09-01",
+    "end_date": "2024-12-20"
+  },
+  "description": "Creation of an interactive dashboard for business analytics and reporting.",
+  "FoundID": "FND007"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc59"
+  },
+  "projectID": "PRJ003",
+  "createBy": "EXP003",
+  "createDate": "2025-01-15",
+  "name": "Cybersecurity Risk Assessment",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-01",
+    "end_date": "2025-05-01"
+  },
+  "description": "Comprehensive security risk analysis for enterprise infrastructure.",
+  "FoundID": "FND014"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5a"
+  },
+  "projectID": "PRJ004",
+  "createBy": "EXP004",
+  "createDate": "2025-01-18",
+  "name": "Corporate Website Redesign",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "2025-03-01",
+    "end_date": "2025-04-30"
+  },
+  "description": "Redesign of corporate website with modern UI and improved UX.",
+  "FoundID": "FND007"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5b"
+  },
+  "projectID": "PRJ005",
+  "createBy": "EXP005",
+  "createDate": "2025-01-20",
+  "name": "Cloud Migration Strategy",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-10",
+    "end_date": "2025-08-15"
+  },
+  "description": "Migration of legacy systems to a cloud-native architecture.",
+  "FoundID": "FND008"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5c"
+  },
+  "projectID": "PRJ006",
+  "createBy": "EXP006",
+  "createDate": "2025-01-22",
+  "name": "AI-Based Recommendation System",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-15",
+    "end_date": "2025-07-30"
+  },
+  "description": "Development of an AI-driven recommendation engine for e-commerce.",
+  "FoundID": "FND009"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5d"
+  },
+  "projectID": "PRJ007",
+  "createBy": "EXP007",
+  "createDate": "2025-01-25",
+  "name": "CI/CD Pipeline Automation",
+  "status": "Completed",
+  "projectTimeline": {
+    "start_date": "2024-10-01",
+    "end_date": "2024-12-01"
+  },
+  "description": "Implementation of automated CI/CD pipelines for faster deployment.",
+  "FoundID": "FND006"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5e"
+  },
+  "projectID": "PRJ008",
+  "createBy": "EXP008",
+  "createDate": "2025-01-28",
+  "name": "Mobile App UI Enhancement",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "2025-03-10",
+    "end_date": "2025-05-10"
+  },
+  "description": "Improving user interface and experience of the company mobile app.",
+  "FoundID": "FND011"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc5f"
+  },
+  "projectID": "PRJ009",
+  "createBy": "EXP009",
+  "createDate": "2025-02-01",
+  "name": "Database Optimization Project",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-15",
+    "end_date": "2025-06-01"
+  },
+  "description": "Optimization of database performance and indexing strategies.",
+  "FoundID": "FND004"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc60"
+  },
+  "projectID": "PRJ010",
+  "createBy": "EXP010",
+  "createDate": "2025-02-03",
+  "name": "Android Application Development",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-20",
+    "end_date": "2025-09-01"
+  },
+  "description": "Development of a native Android application for enterprise clients.",
+  "FoundID": "FND011"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc61"
+  },
+  "projectID": "PRJ011",
+  "createBy": "EXP011",
+  "createDate": "2025-02-05",
+  "name": "Enterprise Architecture Modernization",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "2025-04-01",
+    "end_date": "2025-12-01"
+  },
+  "description": "Modernizing legacy enterprise systems with microservices architecture.",
+  "FoundID": "FND001"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc62"
+  },
+  "projectID": "PRJ012",
+  "createBy": "EXP012",
+  "createDate": "2025-02-07",
+  "name": "Automated Testing Framework",
+  "status": "Completed",
+  "projectTimeline": {
+    "start_date": "2024-08-01",
+    "end_date": "2024-11-15"
+  },
+  "description": "Building a comprehensive automated testing framework.",
+  "FoundID": "FND006"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc63"
+  },
+  "projectID": "PRJ013",
+  "createBy": "EXP013",
+  "createDate": "2025-02-10",
+  "name": "Full-Stack Web Platform",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-02-20",
+    "end_date": "2025-08-20"
+  },
+  "description": "Development of a full-stack enterprise collaboration platform.",
+  "FoundID": "FND008"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc64"
+  },
+  "projectID": "PRJ014",
+  "createBy": "EXP014",
+  "createDate": "2025-02-12",
+  "name": "Business Process Optimization",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "2025-03-15",
+    "end_date": "2025-07-15"
+  },
+  "description": "Analyzing and optimizing internal business processes.",
+  "FoundID": "FND019"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc65"
+  },
+  "projectID": "PRJ015",
+  "createBy": "EXP015",
+  "createDate": "2025-02-14",
+  "name": "Natural Language Processing Tool",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-03-01",
+    "end_date": "2025-09-30"
+  },
+  "description": "Developing an NLP tool for automated document analysis.",
+  "FoundID": "FND009"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc66"
+  },
+  "projectID": "PRJ016",
+  "createBy": "EXP016",
+  "createDate": "2025-02-16",
+  "name": "Cloud Security Audit",
+  "status": "Completed",
+  "projectTimeline": {
+    "start_date": "2024-10-10",
+    "end_date": "2024-12-30"
+  },
+  "description": "Security audit of enterprise cloud infrastructure.",
+  "FoundID": "FND014"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc67"
+  },
+  "projectID": "PRJ017",
+  "createBy": "EXP017",
+  "createDate": "2025-02-18",
+  "name": "Distributed Messaging System",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-03-05",
+    "end_date": "2025-10-01"
+  },
+  "description": "Implementation of a distributed event-driven messaging system.",
+  "FoundID": "FND001"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc68"
+  },
+  "projectID": "PRJ018",
+  "createBy": "EXP018",
+  "createDate": "2025-02-20",
+  "name": "IT Service Management Platform",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "2025-04-01",
+    "end_date": "2025-08-01"
+  },
+  "description": "Development of an IT service management and ticketing system.",
+  "FoundID": "FND008"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc69"
+  },
+  "projectID": "PRJ019",
+  "createBy": "EXP019",
+  "createDate": "2025-02-22",
+  "name": "Enterprise Project Management System",
+  "status": "In Progress",
+  "projectTimeline": {
+    "start_date": "2025-03-10",
+    "end_date": "2025-11-30"
+  },
+  "description": "Design and development of an enterprise-level project management system.",
+  "FoundID": "FND019"
+},
+{
+  "_id": {
+    "$oid": "69a4fb94b5565774c6aecc6a"
+  },
+  "projectID": "PRJ020",
+  "createBy": "EXP020",
+  "createDate": "2025-02-25",
+  "name": "Application Performance Monitoring Tool",
+  "status": "Completed",
+  "projectTimeline": {
+    "start_date": "2024-07-01",
+    "end_date": "2024-10-15"
+  },
+  "description": "Building a monitoring tool for tracking application performance metrics.",
+  "FoundID": "FND004"
+},
+{
+  "_id": {
+    "$oid": "69d262b812d344c69c998028"
+  },
+  "projectID": "PRJ021",
+  "createBy": "EXP022",
+  "createDate": "2026-04-05",
+  "name": "hahaha",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "string123",
+    "end_date": "string322"
+  },
+  "description": "string@@"
+},
+{
+  "_id": {
+    "$oid": "69db1a7a0b6c21d5e5d7500c"
+  },
+  "projectID": "PRJ022",
+  "createBy": "EXP024",
+  "createDate": "2026-04-12",
+  "name": "Python Beginer",
+  "status": "Planning",
+  "projectTimeline": {
+    "start_date": "string",
+    "end_date": "string"
+  },
+  "description": "Learn python from scratch"
+}]

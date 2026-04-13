@@ -1,0 +1,220 @@
+[{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc42"
+  },
+  "fundName": "Global Education Fund",
+  "date": "2010-05-12",
+  "founder": "Andrew Collins",
+  "account": "globaledu",
+  "password": "GlobalEdu@123",
+  "FoundID": "FND001"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc43"
+  },
+  "fundName": "HealthCare Support Foundation",
+  "date": "2012-09-18",
+  "founder": "Sophia Turner",
+  "account": "healthsupport",
+  "password": "Health@123",
+  "FoundID": "FND002"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc44"
+  },
+  "fundName": "Green Earth Initiative",
+  "date": "2015-03-22",
+  "founder": "Michael Green",
+  "account": "greenearth",
+  "password": "Green@123",
+  "FoundID": "FND003"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc45"
+  },
+  "fundName": "Future Tech Development Fund",
+  "date": "2018-07-10",
+  "founder": "Daniel Roberts",
+  "account": "futuretech",
+  "password": "Future@123",
+  "FoundID": "FND004"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc46"
+  },
+  "fundName": "Children Hope Foundation",
+  "date": "2009-11-05",
+  "founder": "Emma Johnson",
+  "account": "childrenhope",
+  "password": "Hope@123",
+  "FoundID": "FND005"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc47"
+  },
+  "fundName": "Innovation Research Fund",
+  "date": "2016-01-14",
+  "founder": "William Harris",
+  "account": "innovationfund",
+  "password": "Innovation@123",
+  "FoundID": "FND006"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc48"
+  },
+  "fundName": "Community Growth Foundation",
+  "date": "2013-04-28",
+  "founder": "Olivia Martinez",
+  "account": "communitygrowth",
+  "password": "Community@123",
+  "FoundID": "FND007"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc49"
+  },
+  "fundName": "Global Health Initiative",
+  "date": "2011-06-30",
+  "founder": "James Anderson",
+  "account": "globalhealth",
+  "password": "HealthInit@123",
+  "FoundID": "FND008"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4a"
+  },
+  "fundName": "Women Empowerment Fund",
+  "date": "2017-08-19",
+  "founder": "Isabella Clark",
+  "account": "womenempower",
+  "password": "Women@123",
+  "FoundID": "FND009"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4b"
+  },
+  "fundName": "Youth Leadership Foundation",
+  "date": "2014-12-03",
+  "founder": "Benjamin Lewis",
+  "account": "youthleader",
+  "password": "Youth@123",
+  "FoundID": "FND010"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4c"
+  },
+  "fundName": "Digital Future Fund",
+  "date": "2019-02-11",
+  "founder": "Lucas Walker",
+  "account": "digitalfuture",
+  "password": "Digital@123",
+  "FoundID": "FND011"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4d"
+  },
+  "fundName": "Sustainable Energy Foundation",
+  "date": "2008-10-25",
+  "founder": "Charlotte Hall",
+  "account": "sustainenergy",
+  "password": "Energy@123",
+  "FoundID": "FND012"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4e"
+  },
+  "fundName": "Arts and Culture Fund",
+  "date": "2013-09-09",
+  "founder": "Alexander Young",
+  "account": "artsculture",
+  "password": "Arts@123",
+  "FoundID": "FND013"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc4f"
+  },
+  "fundName": "Global Science Research Foundation",
+  "date": "2016-05-17",
+  "founder": "Mia King",
+  "account": "globalscience",
+  "password": "Science@123",
+  "FoundID": "FND014"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc50"
+  },
+  "fundName": "Rural Development Fund",
+  "date": "2012-03-01",
+  "founder": "Ethan Scott",
+  "account": "ruraldev",
+  "password": "Rural@123",
+  "FoundID": "FND015"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc51"
+  },
+  "fundName": "Global Relief Foundation",
+  "date": "2007-07-21",
+  "founder": "Harper Adams",
+  "account": "globalrelief",
+  "password": "Relief@123",
+  "FoundID": "FND016"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc52"
+  },
+  "fundName": "Tech Startup Support Fund",
+  "date": "2020-01-15",
+  "founder": "Daniel Carter",
+  "account": "startupfund",
+  "password": "Startup@123",
+  "FoundID": "FND017"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc53"
+  },
+  "fundName": "Education for All Foundation",
+  "date": "2011-11-11",
+  "founder": "Amelia White",
+  "account": "educationforall",
+  "password": "EduAll@123",
+  "FoundID": "FND018"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc54"
+  },
+  "fundName": "Medical Aid Support Fund",
+  "date": "2015-04-06",
+  "founder": "Matthew Baker",
+  "account": "medicalaid",
+  "password": "Medical@123",
+  "FoundID": "FND019"
+},
+{
+  "_id": {
+    "$oid": "69a4f8a7b5565774c6aecc55"
+  },
+  "fundName": "Global Innovation Network",
+  "date": "2018-09-27",
+  "founder": "Ella Thompson",
+  "account": "globalinnovation",
+  "password": "Innovation@456",
+  "FoundID": "FND020"
+}]

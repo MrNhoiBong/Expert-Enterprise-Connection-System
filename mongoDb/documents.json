@@ -1,0 +1,275 @@
+[{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc6e"
+  },
+  "docID": "DOC001",
+  "createBy": "EXP001",
+  "contain": "PRJ001",
+  "URL": "https://example.com/docs/doc001",
+  "name": "Project Proposal Analysis",
+  "CreateDate": "2025-01-05"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc6f"
+  },
+  "docID": "DOC002",
+  "createBy": "EXP002",
+  "contain": "PRJ002",
+  "URL": "https://example.com/docs/doc002",
+  "name": "Technical Architecture Design",
+  "CreateDate": "2025-01-08"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc70"
+  },
+  "docID": "DOC003",
+  "createBy": "EXP003",
+  "contain": "PRJ003",
+  "URL": "https://example.com/docs/doc003",
+  "name": "Requirement Specification",
+  "CreateDate": "2025-01-12"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc71"
+  },
+  "docID": "DOC004",
+  "createBy": "EXP004",
+  "contain": "PRJ004",
+  "URL": "https://example.com/docs/doc004",
+  "name": "System Integration Plan",
+  "CreateDate": "2025-01-15"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc72"
+  },
+  "docID": "DOC005",
+  "createBy": "EXP005",
+  "contain": "PRJ005",
+  "URL": "https://example.com/docs/doc005",
+  "name": "UI/UX Research Document",
+  "CreateDate": "2025-01-18"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc73"
+  },
+  "docID": "DOC006",
+  "createBy": "EXP006",
+  "contain": "PRJ006",
+  "URL": "https://example.com/docs/doc006",
+  "name": "Database Schema Documentation",
+  "CreateDate": "2025-01-22"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc74"
+  },
+  "docID": "DOC007",
+  "createBy": "EXP007",
+  "contain": "PRJ007",
+  "URL": "https://example.com/docs/doc007",
+  "name": "Security Assessment Report",
+  "CreateDate": "2025-01-25"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc75"
+  },
+  "docID": "DOC008",
+  "createBy": "EXP008",
+  "contain": "PRJ008",
+  "URL": "https://example.com/docs/doc008",
+  "name": "Performance Testing Results",
+  "CreateDate": "2025-01-28"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc76"
+  },
+  "docID": "DOC009",
+  "createBy": "EXP009",
+  "contain": "PRJ009",
+  "URL": "https://example.com/docs/doc009",
+  "name": "API Documentation",
+  "CreateDate": "2025-02-02"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc77"
+  },
+  "docID": "DOC010",
+  "createBy": "EXP010",
+  "contain": "PRJ010",
+  "URL": "https://example.com/docs/doc010",
+  "name": "Deployment Guide",
+  "CreateDate": "2025-02-05"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc78"
+  },
+  "docID": "DOC011",
+  "createBy": "EXP011",
+  "contain": "PRJ011",
+  "URL": "https://example.com/docs/doc011",
+  "name": "Maintenance Plan",
+  "CreateDate": "2025-02-09"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc79"
+  },
+  "docID": "DOC012",
+  "createBy": "EXP012",
+  "contain": "PRJ012",
+  "URL": "https://example.com/docs/doc012",
+  "name": "User Training Manual",
+  "CreateDate": "2025-02-12"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7a"
+  },
+  "docID": "DOC013",
+  "createBy": "EXP013",
+  "contain": "PRJ013",
+  "URL": "https://example.com/docs/doc013",
+  "name": "Project Risk Analysis",
+  "CreateDate": "2025-02-15"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7b"
+  },
+  "docID": "DOC014",
+  "createBy": "EXP014",
+  "contain": "PRJ014",
+  "URL": "https://example.com/docs/doc014",
+  "name": "Cost Estimation Report",
+  "CreateDate": "2025-02-18"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7c"
+  },
+  "docID": "DOC015",
+  "createBy": "EXP015",
+  "contain": "PRJ015",
+  "URL": "https://example.com/docs/doc015",
+  "name": "Market Research Summary",
+  "CreateDate": "2025-02-20"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7d"
+  },
+  "docID": "DOC016",
+  "createBy": "EXP016",
+  "contain": "PRJ016",
+  "URL": "https://example.com/docs/doc016",
+  "name": "Compliance Documentation",
+  "CreateDate": "2025-02-22"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7e"
+  },
+  "docID": "DOC017",
+  "createBy": "EXP017",
+  "contain": "PRJ017",
+  "URL": "https://example.com/docs/doc017",
+  "name": "Cloud Infrastructure Plan",
+  "CreateDate": "2025-02-24"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc7f"
+  },
+  "docID": "DOC018",
+  "createBy": "EXP018",
+  "contain": "PRJ018",
+  "URL": "https://example.com/docs/doc018",
+  "name": "DevOps Workflow Guide",
+  "CreateDate": "2025-02-26"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc80"
+  },
+  "docID": "DOC019",
+  "createBy": "EXP019",
+  "contain": "PRJ019",
+  "URL": "https://example.com/docs/doc019",
+  "name": "Data Migration Strategy",
+  "CreateDate": "2025-02-28"
+},
+{
+  "_id": {
+    "$oid": "69a4fbf9b5565774c6aecc81"
+  },
+  "docID": "DOC020",
+  "createBy": "EXP020",
+  "contain": "PRJ020",
+  "URL": "https://example.com/docs/doc020",
+  "name": "Final Project Report",
+  "CreateDate": "2025-03-01"
+},
+{
+  "_id": {
+    "$oid": "69d2630a12d344c69c998029"
+  },
+  "docID": "DOC021",
+  "createBy": "EXP022",
+  "contain": "string",
+  "URL": "string",
+  "name": "aaaa",
+  "CreateDate": "2026-04-05"
+},
+{
+  "_id": {
+    "$oid": "69db1d10da6129ef4454bd25"
+  },
+  "docID": "DOC022",
+  "createBy": "EXP024",
+  "contain": "PRJ022",
+  "URL": "https://dilib.vn/pdf/viewer.php?id=edeed5",
+  "name": "string123",
+  "CreateDate": "2026-04-12"
+},
+{
+  "_id": {
+    "$oid": "69dc4306bb75d555aebd2937"
+  },
+  "docID": "DOC023",
+  "createBy": "EXP024",
+  "contain": "PRJ022",
+  "URL": "http://localhost:9000/imagedocdb/PRJ022/7b75d66c-b057-4083-9255-1ecf1695cb35/logo_ttu.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20260413%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260413T011238Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=49db34c03d47f044e88f6b90c299e4c8f55ac789399e33c097a54956c52ca225",
+  "name": "logo_ttu.png",
+  "CreateDate": "2026-04-13"
+},
+{
+  "_id": {
+    "$oid": "69dc4a50bb75d555aebd2938"
+  },
+  "docID": "DOC024",
+  "createBy": "EXP024",
+  "contain": "PRJ022",
+  "URL": "http://localhost:9000/imagedocdb/PRJ022/17f28f63-d8b3-4e28-8208-5d8360ced003/10.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=minioadmin%2F20260413%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260413T014344Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a8f88f682035a57581abe40f3653980aa605c9d754f9762630851ce427672c18",
+  "name": "10.jpg",
+  "CreateDate": "2026-04-13"
+},
+{
+  "_id": {
+    "$oid": "69dc4a944fdfe923066aa3b1"
+  },
+  "docID": "DOC025",
+  "createBy": "EXP024",
+  "contain": "PRJ022",
+  "URL": "http://192.168.80.48:9000/imagedocdb/PRJ022/1746419b-c685-402f-834c-d7221e2cc2d5/12.png",
+  "name": "12.png",
+  "CreateDate": "2026-04-13"
+}]

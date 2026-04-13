@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\src",
+    "\\backend\\src\\api",
+    "\\backend\\src\\api\\auth_server",
+    "\\backend\\src\\api\\business_server",
+    "\\backend\\src\\businessLogic",
+    "\\backend\\src\\databases",
+    "\\backend\\src\\databases\\implement"
+  ],
+  "SelectedNode": "\\mongoDb",
+  "PreviewInSolutionExplorer": false
+}

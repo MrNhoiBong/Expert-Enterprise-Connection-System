@@ -1,0 +1,260 @@
+[{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc2d"
+  },
+  "enterpriseID": "ENT001",
+  "company_name": "TechNova Solutions",
+  "email": "contact@technova.com",
+  "phone": "+1-202-555-0101",
+  "tax_code": "TX100001",
+  "founded_year": 2010,
+  "account": "technova",
+  "password": "TechNova@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc2e"
+  },
+  "enterpriseID": "ENT002",
+  "company_name": "GlobalSoft Systems",
+  "email": "info@globalsoft.com",
+  "phone": "+1-202-555-0102",
+  "tax_code": "TX100002",
+  "founded_year": 2012,
+  "account": "globalsoft",
+  "password": "GlobalSoft@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc2f"
+  },
+  "enterpriseID": "ENT003",
+  "company_name": "NextGen Innovations",
+  "email": "support@nextgen.com",
+  "phone": "+1-202-555-0103",
+  "tax_code": "TX100003",
+  "founded_year": 2015,
+  "account": "nextgen",
+  "password": "NextGen@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc30"
+  },
+  "enterpriseID": "ENT004",
+  "company_name": "BlueWave Technologies",
+  "email": "hello@bluewave.com",
+  "phone": "+1-202-555-0104",
+  "tax_code": "TX100004",
+  "founded_year": 2008,
+  "account": "bluewave",
+  "password": "BlueWave@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc31"
+  },
+  "enterpriseID": "ENT005",
+  "company_name": "Skyline Digital",
+  "email": "contact@skylinedigital.com",
+  "phone": "+1-202-555-0105",
+  "tax_code": "TX100005",
+  "founded_year": 2016,
+  "account": "skylinedigital",
+  "password": "Skyline@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc32"
+  },
+  "enterpriseID": "ENT006",
+  "company_name": "Vertex Solutions",
+  "email": "info@vertexsolutions.com",
+  "phone": "+1-202-555-0106",
+  "tax_code": "TX100006",
+  "founded_year": 2011,
+  "account": "vertex",
+  "password": "Vertex@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc33"
+  },
+  "enterpriseID": "ENT007",
+  "company_name": "PrimeTech Industries",
+  "email": "support@primetech.com",
+  "phone": "+1-202-555-0107",
+  "tax_code": "TX100007",
+  "founded_year": 2005,
+  "account": "primetech",
+  "password": "PrimeTech@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc34"
+  },
+  "enterpriseID": "ENT008",
+  "company_name": "FutureLink Corp",
+  "email": "contact@futurelink.com",
+  "phone": "+1-202-555-0108",
+  "tax_code": "TX100008",
+  "founded_year": 2018,
+  "account": "futurelink",
+  "password": "FutureLink@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc35"
+  },
+  "enterpriseID": "ENT009",
+  "company_name": "Quantum Dynamics",
+  "email": "info@quantumdynamics.com",
+  "phone": "+1-202-555-0109",
+  "tax_code": "TX100009",
+  "founded_year": 2013,
+  "account": "quantum",
+  "password": "Quantum@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc36"
+  },
+  "enterpriseID": "ENT010",
+  "company_name": "Apex Global Services",
+  "email": "support@apexglobal.com",
+  "phone": "+1-202-555-0110",
+  "tax_code": "TX100010",
+  "founded_year": 2009,
+  "account": "apexglobal",
+  "password": "Apex@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc37"
+  },
+  "enterpriseID": "ENT011",
+  "company_name": "BrightPath Technologies",
+  "email": "hello@brightpath.com",
+  "phone": "+1-202-555-0111",
+  "tax_code": "TX100011",
+  "founded_year": 2014,
+  "account": "brightpath",
+  "password": "BrightPath@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc38"
+  },
+  "enterpriseID": "ENT012",
+  "company_name": "CoreLogic Systems",
+  "email": "info@corelogic.com",
+  "phone": "+1-202-555-0112",
+  "tax_code": "TX100012",
+  "founded_year": 2007,
+  "account": "corelogic",
+  "password": "CoreLogic@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc39"
+  },
+  "enterpriseID": "ENT013",
+  "company_name": "InnovateX Labs",
+  "email": "contact@innovatex.com",
+  "phone": "+1-202-555-0113",
+  "tax_code": "TX100013",
+  "founded_year": 2019,
+  "account": "innovatex",
+  "password": "InnovateX@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3a"
+  },
+  "enterpriseID": "ENT014",
+  "company_name": "Digital Horizon Ltd",
+  "email": "support@digitalhorizon.com",
+  "phone": "+1-202-555-0114",
+  "tax_code": "TX100014",
+  "founded_year": 2006,
+  "account": "digitalhorizon",
+  "password": "Digital@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3b"
+  },
+  "enterpriseID": "ENT015",
+  "company_name": "Nexus Enterprise Group",
+  "email": "info@nexusgroup.com",
+  "phone": "+1-202-555-0115",
+  "tax_code": "TX100015",
+  "founded_year": 2017,
+  "account": "nexusgroup",
+  "password": "Nexus@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3c"
+  },
+  "enterpriseID": "ENT016",
+  "company_name": "Pioneer Tech Corp",
+  "email": "contact@pioneertech.com",
+  "phone": "+1-202-555-0116",
+  "tax_code": "TX100016",
+  "founded_year": 2004,
+  "account": "pioneertech",
+  "password": "Pioneer@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3d"
+  },
+  "enterpriseID": "ENT017",
+  "company_name": "Summit IT Solutions",
+  "email": "support@summitit.com",
+  "phone": "+1-202-555-0117",
+  "tax_code": "TX100017",
+  "founded_year": 2011,
+  "account": "summitit",
+  "password": "Summit@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3e"
+  },
+  "enterpriseID": "ENT018",
+  "company_name": "Visionary Systems",
+  "email": "info@visionarysystems.com",
+  "phone": "+1-202-555-0118",
+  "tax_code": "TX100018",
+  "founded_year": 2016,
+  "account": "visionary",
+  "password": "Visionary@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc3f"
+  },
+  "enterpriseID": "ENT019",
+  "company_name": "Infinity Tech Solutions",
+  "email": "contact@infinitytech.com",
+  "phone": "+1-202-555-0119",
+  "tax_code": "TX100019",
+  "founded_year": 2013,
+  "account": "infinitytech",
+  "password": "Infinity@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f71db5565774c6aecc40"
+  },
+  "enterpriseID": "ENT020",
+  "company_name": "Elite Software Group",
+  "email": "hello@elitesoftware.com",
+  "phone": "+1-202-555-0120",
+  "tax_code": "TX100020",
+  "founded_year": 2002,
+  "account": "elitesoftware",
+  "password": "Elite@123"
+}]

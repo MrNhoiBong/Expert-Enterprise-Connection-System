@@ -1,0 +1,200 @@
+[{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc2"
+  },
+  "enterpriseID": "ENT001",
+  "projectID": "PRJ001",
+  "status": "approved",
+  "grantDate": "2025-01-10",
+  "description": "Funding approved for initial research and prototype development."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc3"
+  },
+  "enterpriseID": "ENT002",
+  "projectID": "PRJ002",
+  "status": "disbursed",
+  "grantDate": "2025-01-15",
+  "description": "First phase funding disbursed for system implementation."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc4"
+  },
+  "enterpriseID": "ENT003",
+  "projectID": "PRJ003",
+  "status": "pending",
+  "grantDate": "2025-01-20",
+  "description": "Grant under review for technical feasibility assessment."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc5"
+  },
+  "enterpriseID": "ENT004",
+  "projectID": "PRJ004",
+  "status": "rejected",
+  "grantDate": "2025-01-25",
+  "description": "Proposal did not meet funding criteria requirements."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc6"
+  },
+  "enterpriseID": "ENT005",
+  "projectID": "PRJ005",
+  "status": "approved",
+  "grantDate": "2025-02-01",
+  "description": "Approved for UI/UX research and product design phase."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc7"
+  },
+  "enterpriseID": "ENT006",
+  "projectID": "PRJ006",
+  "status": "disbursed",
+  "grantDate": "2025-02-05",
+  "description": "Database infrastructure funding successfully released."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc8"
+  },
+  "enterpriseID": "ENT007",
+  "projectID": "PRJ007",
+  "status": "pending",
+  "grantDate": "2025-02-08",
+  "description": "Security evaluation required before final approval."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccc9"
+  },
+  "enterpriseID": "ENT008",
+  "projectID": "PRJ008",
+  "status": "approved",
+  "grantDate": "2025-02-12",
+  "description": "Performance testing phase funded for optimization improvements."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccca"
+  },
+  "enterpriseID": "ENT009",
+  "projectID": "PRJ009",
+  "status": "disbursed",
+  "grantDate": "2025-02-15",
+  "description": "API development funding released for integration tasks."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aecccb"
+  },
+  "enterpriseID": "ENT010",
+  "projectID": "PRJ010",
+  "status": "rejected",
+  "grantDate": "2025-02-18",
+  "description": "Budget proposal exceeded allocated funding limits."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aecccc"
+  },
+  "enterpriseID": "ENT011",
+  "projectID": "PRJ011",
+  "status": "approved",
+  "grantDate": "2025-02-20",
+  "description": "Maintenance and support funding approved."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aecccd"
+  },
+  "enterpriseID": "ENT012",
+  "projectID": "PRJ012",
+  "status": "pending",
+  "grantDate": "2025-02-22",
+  "description": "Awaiting final documentation review before approval."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccce"
+  },
+  "enterpriseID": "ENT013",
+  "projectID": "PRJ013",
+  "status": "disbursed",
+  "grantDate": "2025-02-24",
+  "description": "Risk management implementation funding released."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aecccf"
+  },
+  "enterpriseID": "ENT014",
+  "projectID": "PRJ014",
+  "status": "approved",
+  "grantDate": "2025-02-26",
+  "description": "Cost optimization initiative successfully funded."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd0"
+  },
+  "enterpriseID": "ENT015",
+  "projectID": "PRJ015",
+  "status": "rejected",
+  "grantDate": "2025-02-27",
+  "description": "Market research scope insufficient for grant approval."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd1"
+  },
+  "enterpriseID": "ENT016",
+  "projectID": "PRJ016",
+  "status": "approved",
+  "grantDate": "2025-02-28",
+  "description": "Compliance and regulatory documentation funding granted."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd2"
+  },
+  "enterpriseID": "ENT017",
+  "projectID": "PRJ017",
+  "status": "disbursed",
+  "grantDate": "2025-03-01",
+  "description": "Cloud infrastructure investment funding completed."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd3"
+  },
+  "enterpriseID": "ENT018",
+  "projectID": "PRJ018",
+  "status": "pending",
+  "grantDate": "2025-03-02",
+  "description": "DevOps workflow evaluation in progress."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd4"
+  },
+  "enterpriseID": "ENT019",
+  "projectID": "PRJ019",
+  "status": "approved",
+  "grantDate": "2025-03-03",
+  "description": "Data migration and system upgrade funding approved."
+},
+{
+  "_id": {
+    "$oid": "69a501a8b5565774c6aeccd5"
+  },
+  "enterpriseID": "ENT020",
+  "projectID": "PRJ020",
+  "status": "disbursed",
+  "grantDate": "2025-03-04",
+  "description": "Final project execution funding successfully transferred."
+}]

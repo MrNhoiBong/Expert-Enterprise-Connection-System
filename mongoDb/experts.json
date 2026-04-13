@@ -1,0 +1,417 @@
+[{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc18"
+  },
+  "expertID": "EXP001",
+  "name": "John Miller",
+  "email": "john.miller@example.com",
+  "experience": 8,
+  "profileSummary": "Backend developer specializing in scalable enterprise applications.",
+  "skills": [
+    "Java",
+    "Spring Boot",
+    "MongoDB",
+    "REST API"
+  ],
+  "account": "johnmiller",
+  "password": "John@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc19"
+  },
+  "expertID": "EXP002",
+  "name": "Emily Johnson",
+  "email": "emily.johnson@example.com",
+  "experience": 6,
+  "profileSummary": "Data analyst with strong background in business intelligence.",
+  "skills": [
+    "Python",
+    "SQL",
+    "Power BI",
+    "Data Visualization"
+  ],
+  "account": "emilyjohnson",
+  "password": "Emily@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1a"
+  },
+  "expertID": "EXP003",
+  "name": "Michael Brown",
+  "email": "michael.brown@example.com",
+  "experience": 10,
+  "profileSummary": "Cybersecurity expert with experience in enterprise security systems.",
+  "skills": [
+    "Network Security",
+    "Penetration Testing",
+    "CISSP",
+    "Risk Assessment"
+  ],
+  "account": "michaelbrown",
+  "password": "Michael@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1b"
+  },
+  "expertID": "EXP004",
+  "name": "Sophia Davis",
+  "email": "sophia.davis@example.com",
+  "experience": 5,
+  "profileSummary": "Frontend developer focused on modern web technologies.",
+  "skills": [
+    "React",
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "account": "sophiadavis",
+  "password": "Sophia@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1c"
+  },
+  "expertID": "EXP005",
+  "name": "William Wilson",
+  "email": "william.wilson@example.com",
+  "experience": 12,
+  "profileSummary": "Cloud architect designing scalable distributed systems.",
+  "skills": [
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "Microservices"
+  ],
+  "account": "williamwilson",
+  "password": "William@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1d"
+  },
+  "expertID": "EXP006",
+  "name": "Olivia Martinez",
+  "email": "olivia.martinez@example.com",
+  "experience": 7,
+  "profileSummary": "Machine learning engineer building predictive models.",
+  "skills": [
+    "Machine Learning",
+    "TensorFlow",
+    "Python",
+    "Deep Learning"
+  ],
+  "account": "oliviamartinez",
+  "password": "Olivia@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1e"
+  },
+  "expertID": "EXP007",
+  "name": "James Anderson",
+  "email": "james.anderson@example.com",
+  "experience": 9,
+  "profileSummary": "DevOps engineer automating CI/CD pipelines.",
+  "skills": [
+    "Jenkins",
+    "Git",
+    "Linux",
+    "CI/CD"
+  ],
+  "account": "jamesanderson",
+  "password": "James@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc1f"
+  },
+  "expertID": "EXP008",
+  "name": "Ava Thomas",
+  "email": "ava.thomas@example.com",
+  "experience": 4,
+  "profileSummary": "UI/UX designer creating user-centered digital experiences.",
+  "skills": [
+    "Figma",
+    "Adobe XD",
+    "User Research",
+    "Prototyping"
+  ],
+  "account": "avathomas",
+  "password": "Ava@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc20"
+  },
+  "expertID": "EXP009",
+  "name": "Benjamin Taylor",
+  "email": "benjamin.taylor@example.com",
+  "experience": 11,
+  "profileSummary": "Database administrator managing high-availability systems.",
+  "skills": [
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "Performance Tuning"
+  ],
+  "account": "benjamintaylor",
+  "password": "Benjamin@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc21"
+  },
+  "expertID": "EXP010",
+  "name": "Isabella Moore",
+  "email": "isabella.moore@example.com",
+  "experience": 6,
+  "profileSummary": "Mobile app developer specializing in Android platforms.",
+  "skills": [
+    "Kotlin",
+    "Android Studio",
+    "Firebase",
+    "REST API"
+  ],
+  "account": "isabellamoore",
+  "password": "Isabella@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc22"
+  },
+  "expertID": "EXP011",
+  "name": "Lucas Jackson",
+  "email": "lucas.jackson@example.com",
+  "experience": 13,
+  "profileSummary": "Enterprise solution architect with cross-industry expertise.",
+  "skills": [
+    "System Design",
+    "Cloud Architecture",
+    "Agile",
+    "Enterprise Integration"
+  ],
+  "account": "lucasjackson",
+  "password": "Lucas@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc23"
+  },
+  "expertID": "EXP012",
+  "name": "Mia White",
+  "email": "mia.white@example.com",
+  "experience": 5,
+  "profileSummary": "QA engineer ensuring software quality and reliability.",
+  "skills": [
+    "Selenium",
+    "Test Automation",
+    "Manual Testing",
+    "JIRA"
+  ],
+  "account": "miawhite",
+  "password": "Mia@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc24"
+  },
+  "expertID": "EXP013",
+  "name": "Ethan Harris",
+  "email": "ethan.harris@example.com",
+  "experience": 7,
+  "profileSummary": "Full-stack developer building end-to-end web applications.",
+  "skills": [
+    "Node.js",
+    "React",
+    "MongoDB",
+    "Express"
+  ],
+  "account": "ethanharris",
+  "password": "Ethan@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc25"
+  },
+  "expertID": "EXP014",
+  "name": "Charlotte Martin",
+  "email": "charlotte.martin@example.com",
+  "experience": 9,
+  "profileSummary": "Business analyst translating requirements into technical solutions.",
+  "skills": [
+    "Requirement Analysis",
+    "UML",
+    "Scrum",
+    "Stakeholder Management"
+  ],
+  "account": "charlottemartin",
+  "password": "Charlotte@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc26"
+  },
+  "expertID": "EXP015",
+  "name": "Alexander Lee",
+  "email": "alexander.lee@example.com",
+  "experience": 8,
+  "profileSummary": "AI researcher focused on natural language processing.",
+  "skills": [
+    "NLP",
+    "Python",
+    "PyTorch",
+    "Deep Learning"
+  ],
+  "account": "alexanderlee",
+  "password": "Alexander@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc27"
+  },
+  "expertID": "EXP016",
+  "name": "Amelia Walker",
+  "email": "amelia.walker@example.com",
+  "experience": 6,
+  "profileSummary": "Cloud security specialist protecting enterprise systems.",
+  "skills": [
+    "Cloud Security",
+    "IAM",
+    "Encryption",
+    "AWS"
+  ],
+  "account": "ameliawalker",
+  "password": "Amelia@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc28"
+  },
+  "expertID": "EXP017",
+  "name": "Daniel Hall",
+  "email": "daniel.hall@example.com",
+  "experience": 10,
+  "profileSummary": "Software engineer experienced in distributed systems.",
+  "skills": [
+    "Distributed Systems",
+    "Kafka",
+    "Microservices",
+    "Docker"
+  ],
+  "account": "danielhall",
+  "password": "Daniel@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc29"
+  },
+  "expertID": "EXP018",
+  "name": "Harper Young",
+  "email": "harper.young@example.com",
+  "experience": 4,
+  "profileSummary": "Technical support specialist with strong troubleshooting skills.",
+  "skills": [
+    "Technical Support",
+    "Networking",
+    "Customer Service",
+    "ITIL"
+  ],
+  "account": "harperyoung",
+  "password": "Harper@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc2a"
+  },
+  "expertID": "EXP019",
+  "name": "Matthew King",
+  "email": "matthew.king@example.com",
+  "experience": 12,
+  "profileSummary": "Senior project manager delivering large-scale IT projects.",
+  "skills": [
+    "Project Management",
+    "Agile",
+    "Risk Management",
+    "Leadership"
+  ],
+  "account": "matthewking",
+  "password": "Matthew@123"
+},
+{
+  "_id": {
+    "$oid": "69a4f5e8b5565774c6aecc2b"
+  },
+  "expertID": "EXP020",
+  "name": "Ella Scott",
+  "email": "ella.scott@example.com",
+  "experience": 5,
+  "profileSummary": "Software tester ensuring application reliability and performance.",
+  "skills": [
+    "Manual Testing",
+    "Automation Testing",
+    "Test Cases",
+    "Bug Tracking"
+  ],
+  "account": "ellascott",
+  "password": "Ella@123"
+},
+{
+  "_id": {
+    "$oid": "69d25a9fd8bd7d8332de78ab"
+  },
+  "expertID": "EXP021",
+  "name": "thuan",
+  "email": "thuan@111",
+  "account": "thuantrieu",
+  "password": "11111",
+  "skills": [],
+  "experience": 0,
+  "profileSummary": ""
+},
+{
+  "_id": {
+    "$oid": "69d25b8bd8bd7d8332de78ac"
+  },
+  "expertID": "EXP022",
+  "name": "string1",
+  "email": "string@",
+  "account": "thuan2",
+  "password": "321",
+  "skills": [
+    "Python",
+    "AI"
+  ],
+  "experience": 10,
+  "profileSummary": "string2",
+  "company_name": "string",
+  "phone": "string"
+},
+{
+  "_id": {
+    "$oid": "69d2702937f967e7652c5519"
+  },
+  "expertID": "EXP024",
+  "name": "string",
+  "email": "string",
+  "account": "thuan12",
+  "password": "222",
+  "skills": [],
+  "experience": 0,
+  "profileSummary": ""
+},
+{
+  "_id": {
+    "$oid": "69db19edc9f6a6b35b55ecfe"
+  },
+  "expertID": "EXP024",
+  "name": "",
+  "email": "string",
+  "account": "thuan223",
+  "password": "123",
+  "skills": [],
+  "experience": 0,
+  "profileSummary": ""
+}]

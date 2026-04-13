@@ -1,0 +1,200 @@
+[{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccad"
+  },
+  "FoundID": "FND001",
+  "name": "Global Innovation Foundation",
+  "type": "international",
+  "createDate": "2015-03-12",
+  "description": "Supports innovative research and technology transfer projects worldwide."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccae"
+  },
+  "FoundID": "FND002",
+  "name": "Green Future Fund",
+  "type": "non-profit",
+  "createDate": "2018-07-25",
+  "description": "Funds environmental sustainability and climate action initiatives."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccaf"
+  },
+  "FoundID": "FND003",
+  "name": "National Science Grant",
+  "type": "government",
+  "createDate": "2010-01-15",
+  "description": "Provides government funding for scientific research and development."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb0"
+  },
+  "FoundID": "FND004",
+  "name": "Tech Growth Capital",
+  "type": "private",
+  "createDate": "2017-09-05",
+  "description": "Invests in early-stage technology startups and innovation projects."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb1"
+  },
+  "FoundID": "FND005",
+  "name": "Healthcare Advancement Fund",
+  "type": "corporate",
+  "createDate": "2016-11-20",
+  "description": "Supports medical research and healthcare improvement programs."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb2"
+  },
+  "FoundID": "FND006",
+  "name": "Digital Transformation Grant",
+  "type": "government",
+  "createDate": "2019-04-10",
+  "description": "Encourages digital innovation across industries and public sectors."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb3"
+  },
+  "FoundID": "FND007",
+  "name": "Education for Tomorrow Foundation",
+  "type": "non-profit",
+  "createDate": "2014-06-18",
+  "description": "Funds educational research and learning technology solutions."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb4"
+  },
+  "FoundID": "FND008",
+  "name": "Smart City Investment Fund",
+  "type": "international",
+  "createDate": "2020-02-14",
+  "description": "Supports smart infrastructure and urban innovation projects."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb5"
+  },
+  "FoundID": "FND009",
+  "name": "AI Research Endowment",
+  "type": "private",
+  "createDate": "2021-08-30",
+  "description": "Provides grants for artificial intelligence and data science research."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb6"
+  },
+  "FoundID": "FND010",
+  "name": "Renewable Energy Fund",
+  "type": "corporate",
+  "createDate": "2013-12-01",
+  "description": "Invests in renewable energy technologies and clean power solutions."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb7"
+  },
+  "FoundID": "FND011",
+  "name": "Startup Booster Foundation",
+  "type": "private",
+  "createDate": "2018-03-22",
+  "description": "Accelerates startup growth through seed funding and mentorship."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb8"
+  },
+  "FoundID": "FND012",
+  "name": "Global Health Initiative Fund",
+  "type": "international",
+  "createDate": "2012-05-09",
+  "description": "Supports global health research and disease prevention programs."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccb9"
+  },
+  "FoundID": "FND013",
+  "name": "Agricultural Innovation Grant",
+  "type": "government",
+  "createDate": "2011-10-17",
+  "description": "Funds sustainable agriculture and food security research."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccba"
+  },
+  "FoundID": "FND014",
+  "name": "Cybersecurity Advancement Fund",
+  "type": "corporate",
+  "createDate": "2019-09-12",
+  "description": "Supports cybersecurity research and secure digital infrastructure."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccbb"
+  },
+  "FoundID": "FND015",
+  "name": "Women in STEM Foundation",
+  "type": "non-profit",
+  "createDate": "2016-04-03",
+  "description": "Promotes female participation in science, technology, engineering, and mathematics."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccbc"
+  },
+  "FoundID": "FND016",
+  "name": "Climate Action Investment Fund",
+  "type": "international",
+  "createDate": "2020-07-21",
+  "description": "Provides capital for climate resilience and carbon reduction projects."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccbd"
+  },
+  "FoundID": "FND017",
+  "name": "Biotech Research Capital",
+  "type": "private",
+  "createDate": "2017-02-28",
+  "description": "Invests in biotechnology and life sciences research initiatives."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccbe"
+  },
+  "FoundID": "FND018",
+  "name": "Infrastructure Development Grant",
+  "type": "government",
+  "createDate": "2014-08-11",
+  "description": "Supports infrastructure modernization and development projects."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccbf"
+  },
+  "FoundID": "FND019",
+  "name": "Innovation for Society Fund",
+  "type": "non-profit",
+  "createDate": "2015-12-19",
+  "description": "Funds social innovation and community development initiatives."
+},
+{
+  "_id": {
+    "$oid": "69a500aab5565774c6aeccc0"
+  },
+  "FoundID": "FND020",
+  "name": "Advanced Technology Endowment",
+  "type": "corporate",
+  "createDate": "2022-01-05",
+  "description": "Provides long-term funding for advanced and emerging technologies."
+}]
