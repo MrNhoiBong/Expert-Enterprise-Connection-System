@@ -1,6 +1,8 @@
 from permission.interface.authManage import AuthManage
 from permission.interface.getUser import GetUser
 from permission.interface.sessionManage import SessionManage
+from fastapi import FastAPI, Response, Request
+
 
 
 class AuthManageImpl(AuthManage):
@@ -38,7 +40,7 @@ class AuthManageImpl(AuthManage):
 
         return {
             "success": True,
-            "token":   token,       # → set vào cookie: Set-Cookie: session=<token>
+            "token":   token,
             "userId":  user["userId"],
             "role":    user["role"]
         }
@@ -47,9 +49,6 @@ class AuthManageImpl(AuthManage):
     # Logout → xoá session
     # ========================
     def logout(self, session: str) -> str:
-        """
-        Xoá session theo cookie token.
-        """
         deleted = self.session_service.deletesession(session)
 
         if deleted:
@@ -61,8 +60,4 @@ class AuthManageImpl(AuthManage):
     # Check cookie (middleware)
     # ========================
     def check(self, session: str) -> dict | None:
-        """
-        Dùng ở middleware để kiểm tra mỗi request.
-        Trả về { userId, role } nếu hợp lệ, None nếu không.
-        """
         return self.session_service.checksession(session)

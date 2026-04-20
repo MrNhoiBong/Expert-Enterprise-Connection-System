@@ -19,11 +19,12 @@ class ProjectCreateRequest(BaseModel):
 class ProfileUpdateRequest(BaseModel):
     name:           str = None
     email:          str = None
-    skills:         list = None    # expert only
-    experience:     int  = None    # expert only
-    profileSummary: str  = None    # expert only
-    company_name:   str  = None    # enterprise only
-    phone:          str  = None    # enterprise only
+    skills:         list = None   # expert only
+    experience:     int  = None   # expert only
+    profileSummary: str  = None   # expert only
+    company_name:   str  = None   # enterprise only
+    phone:          str  = None   # enterprise only
+    avatarUrl:      str  = None   # avatar image URL (MinIO)
 
 class FileMetadataRequest(BaseModel):
     name:       str
@@ -41,6 +42,7 @@ class FundCreateRequest(BaseModel):
 
 class GrantProjectRequest(BaseModel):
     description: str
+    amount:      float = 0.0   # số tiền tài trợ (USD)
 
 class FundRequestBody(BaseModel):
     found_id: str
@@ -49,7 +51,7 @@ class FundRequestBody(BaseModel):
 # ===== EXPERTS =====
 
 @router.get("/experts")
-def find_experts(name:  Optional[str] = Query(None),
+def find_experts(name: Optional[str] = Query(None),
                  skill: Optional[str] = Query(None),
                  factory: ServiceFactory = Depends(get_factory)):
     if name:
@@ -59,10 +61,9 @@ def find_experts(name:  Optional[str] = Query(None),
     return factory.expert.get_all()
 
 
-@router.get("/experts/{expert_id}")        # ✅ str không phải int
-def expert_detail(expert_id: str,
-                  factory: ServiceFactory = Depends(get_factory)):
-    result = factory.expert.get_by_id(expert_id)
+@router.get("/experts/{id}")
+def get_expert(id: str, factory: ServiceFactory = Depends(get_factory)):
+    result = factory.expert.get_by_id(id)
     if not result:
         raise HTTPException(404, "Expert không tồn tại")
     return result
@@ -78,10 +79,9 @@ def find_enterprises(name: Optional[str] = Query(None),
     return factory.enterprise.get_all()
 
 
-@router.get("/enterprises/{enterprise_id}")
-def enterprise_detail(enterprise_id: str,
-                      factory: ServiceFactory = Depends(get_factory)):
-    result = factory.enterprise.get_by_id(enterprise_id)
+@router.get("/enterprises/{id}")
+def get_enterprise(id: str, factory: ServiceFactory = Depends(get_factory)):
+    result = factory.enterprise.get_by_id(id)
     if not result:
         raise HTTPException(404, "Enterprise không tồn tại")
     return result
@@ -112,7 +112,7 @@ def update_profile(body: ProfileUpdateRequest,
     role = current_user["role"]
     uid  = current_user["userId"]
 
-    update_data = {k: v for k, v in body.model_dump().items() if v is not None}
+    update_data = {k: v for k, v in body.dict().items() if v is not None}
     if not update_data:
         raise HTTPException(400, "Không có dữ liệu cập nhật")
 
@@ -132,15 +132,80 @@ def update_profile(body: ProfileUpdateRequest,
     return {"message": "Cập nhật profile thành công"}
 
 
+# ===== AI Helper =====
+
+OLLAMA_URL   = "http://10.103.240.27:8181/api/generate"
+OLLAMA_MODEL = "llama3:8b"
+
+def suggest_skills_from_ai(description: str, expert_skills: list) -> list:
+    """
+    Gửi description + skill list của expert lên Ollama llama3:8b,
+    nhận về danh sách skill phù hợp cho project.
+    Non-blocking — lỗi thì trả [] không crash API.
+    """
+    import json, urllib.request, urllib.error
+
+    skills_str = ", ".join(expert_skills) if expert_skills else "No skills listed"
+
+    prompt = (
+        "You are a project skill matcher. "
+        "Given a project description and an expert's skill list, "
+        "return ONLY a JSON array (max 5 items) of the most relevant skills "
+        "from the expert's list. No explanation, no markdown, just the JSON array.\n\n"
+        f"Project description: {description}\n"
+        f"Expert skills: {skills_str}\n\n"
+        "Example output: [\"Python\", \"FastAPI\", \"MongoDB\"]"
+    )
+
+    try:
+        payload = json.dumps({
+            "model":  OLLAMA_MODEL,
+            "prompt": prompt,
+            "stream": False
+        }).encode("utf-8")
+
+        req = urllib.request.Request(
+            OLLAMA_URL,
+            data=payload,
+            headers={"Content-Type": "application/json"},
+            method="POST"
+        )
+
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            body = json.loads(resp.read().decode("utf-8"))
+
+        text = body.get("response", "").strip()
+        print(f"[AI] Raw response: {text[:200]}")
+
+        # Parse JSON array từ response
+        start = text.find("[")
+        end   = text.rfind("]") + 1
+        if start != -1 and end > start:
+            skills = json.loads(text[start:end])
+            return [s for s in skills if isinstance(s, str)][:5]
+        return []
+
+    except urllib.error.URLError as e:
+        print(f"[AI] URLError: {e}")
+        return []
+    except TimeoutError:
+        print("[AI] Timeout — skip skill suggestion")
+        return []
+    except Exception as e:
+        print(f"[AI] Error: {e}")
+        return []
+
+
 # ===== PROJECTS =====
 
 @router.post("/projects", status_code=201)
-def create_project(body: ProjectCreateRequest,
-                   current_user: dict = Depends(get_current_user),
-                   factory: ServiceFactory = Depends(get_factory)):
+async def create_project(body: ProjectCreateRequest,
+                         current_user: dict = Depends(get_current_user),
+                         factory: ServiceFactory = Depends(get_factory)):
     if current_user["role"] != "expert":
         raise HTTPException(403, "Chỉ Expert mới có thể tạo project")
 
+    # Tạo project
     project_id = factory.project.create(
         expert_id=current_user["userId"],
         name=body.name,
@@ -148,11 +213,31 @@ def create_project(body: ProjectCreateRequest,
         start_date=body.start_date,
         end_date=body.end_date
     )
-    return {"message": "Tạo project thành công", "projectID": project_id}
+
+    # Lấy danh sách skill của expert qua DAO (không query trực tiếp trong router)
+    expert_skills = factory.dao.get_expert_skills(current_user["userId"])
+
+    # Gọi AI gợi ý skill phù hợp với description (non-blocking — lỗi thì bỏ qua)
+    suggested_skills = []
+    if body.description and expert_skills:
+        suggested_skills = suggest_skills_from_ai(body.description, expert_skills)
+
+    # Gắn suggested_skills vào project nếu AI trả về kết quả
+    if suggested_skills:
+        factory.dao._get_collection("projects").update_one(
+            {"projectID": project_id},
+            {"$set": {"suggestedSkills": suggested_skills}}
+        )
+
+    return {
+        "message":         "Tạo project thành công",
+        "projectID":       project_id,
+        "suggestedSkills": suggested_skills,  # trả về FE để hiển thị
+    }
 
 
 @router.get("/projects")
-def find_projects(name:   Optional[str] = Query(None),
+def find_projects(name: Optional[str] = Query(None),
                   status: Optional[str] = Query(None),
                   factory: ServiceFactory = Depends(get_factory)):
     if name:
@@ -163,18 +248,22 @@ def find_projects(name:   Optional[str] = Query(None),
     return factory.project.get_all()
 
 
-@router.get("/projects/{project_id}")
-def project_detail(project_id: str,
-                   factory: ServiceFactory = Depends(get_factory)):
-    result = factory.project.get_by_id(project_id)
+@router.get("/projects/{id}")
+def get_project(id: str, factory: ServiceFactory = Depends(get_factory)):
+    result = factory.project.get_by_id(id)
     if not result:
         raise HTTPException(404, "Project không tồn tại")
 
+    # Trả về overview đầy đủ
+    experts     = factory.project.get_experts(id, factory.dao)
+    enterprises = factory.project.get_enterprises(id, factory.dao)
+    documents   = factory.project.get_documents(id, factory.dao)
+
     return {
         "project":     result,
-        "experts":     factory.project.get_experts(project_id, factory.dao),
-        "enterprises": factory.project.get_enterprises(project_id, factory.dao),
-        "documents":   factory.project.get_documents(project_id, factory.dao)
+        "experts":     experts,
+        "enterprises": enterprises,
+        "documents":   documents
     }
 
 
@@ -185,7 +274,7 @@ def create_file_metadata(body: FileMetadataRequest,
                          current_user: dict = Depends(get_current_user),
                          factory: ServiceFactory = Depends(get_factory)):
     if current_user["role"] != "expert":
-        raise HTTPException(403, "Chỉ Expert mới có thể tạo file metadata")
+        raise HTTPException(403, "Chỉ Expert mới có thể upload file")
 
     doc_id = factory.document.upload(
         expert_id=current_user["userId"],
@@ -196,13 +285,41 @@ def create_file_metadata(body: FileMetadataRequest,
     return {"message": "Tạo file metadata thành công", "docID": doc_id}
 
 
-@router.get("/files/{file_id}")
-def get_file(file_id: str,
-             factory: ServiceFactory = Depends(get_factory)):
-    result = factory.document.get_by_id(file_id)
+@router.get("/files/{id}")
+def get_file(id: str, factory: ServiceFactory = Depends(get_factory)):
+    result = factory.document.get_by_id(id)
     if not result:
         raise HTTPException(404, "File không tồn tại")
     return result
+
+
+@router.delete("/files/{id}")
+def delete_file(id: str,
+                current_user: dict = Depends(get_current_user),
+                factory: ServiceFactory = Depends(get_factory)):
+    """Xoá file — owner hoặc bất kỳ expert member nào trong project đều xoá được"""
+    if current_user["role"] != "expert":
+        raise HTTPException(403, "Chỉ Expert mới có thể xoá file")
+
+    doc = factory.document.get_by_id(id)
+    if not doc:
+        raise HTTPException(404, "File không tồn tại")
+
+    uid        = current_user["userId"]
+    project_id = doc.get("contain", "")
+    project    = factory.project.get_by_id(project_id)
+
+    is_owner  = project and project.get("createBy") == uid
+    is_member = bool(factory.dao.search(
+        "expertParticipate",
+        {"expertID": uid, "projectID": project_id}
+    ))
+
+    if not is_owner and not is_member:
+        raise HTTPException(403, "Bạn không tham gia project này")
+
+    factory.dao._get_collection("documents").delete_one({"docID": id})
+    return {"message": "Xoá file thành công", "docID": id}
 
 
 # ===== DELETE ACCOUNT =====
@@ -219,9 +336,7 @@ def delete_account(current_user: dict = Depends(get_current_user),
     if not col_name:
         raise HTTPException(403, "Không thể xoá account này")
 
-    factory.dao._get_collection(col_name).delete_one(
-        {id_field: current_user["userId"]}
-    )
+    factory.dao._get_collection(col_name).delete_one({id_field: current_user["userId"]})
     return {"message": "Xoá account thành công"}
 
 
@@ -231,9 +346,9 @@ def delete_account(current_user: dict = Depends(get_current_user),
 def create_foundation(body: FoundationCreateRequest,
                       current_user: dict = Depends(get_current_user),
                       factory: ServiceFactory = Depends(get_factory)):
-    col   = factory.dao._get_collection("foundation")
+    col  = factory.dao._get_collection("foundation")
     count = col.count_documents({})
-    fid   = f"FND{str(count + 1).zfill(3)}"
+    fid  = f"FND{str(count + 1).zfill(3)}"
 
     col.insert_one({
         "FoundID":     fid,
@@ -243,6 +358,14 @@ def create_foundation(body: FoundationCreateRequest,
         "description": body.description
     })
     return {"message": "Tạo foundation thành công", "FoundID": fid}
+
+
+@router.get("/funds")
+def get_funds(factory: ServiceFactory = Depends(get_factory)):
+    """Lấy tất cả funds từ collection createFund"""
+    docs = list(factory.dao._get_collection("createFund").find({}))
+    for d in docs: d.pop("_id", None)
+    return docs
 
 
 @router.post("/funds", status_code=201)
@@ -260,8 +383,17 @@ def create_fund(body: FundCreateRequest,
     return {"message": msg}
 
 
-@router.post("/projects/{project_id}/grants", status_code=201)
-def grant_project(project_id: str,
+@router.get("/grants")
+def get_grants(factory: ServiceFactory = Depends(get_factory)):
+    """Lấy tất cả grant records"""
+    docs = list(factory.dao._get_collection("grant").find({}))
+    for d in docs:
+        d.pop("_id", None)
+    return docs
+
+
+@router.post("/projects/{projectId}/grants", status_code=201)
+def grant_project(projectId: str,
                   body: GrantProjectRequest,
                   current_user: dict = Depends(get_current_user),
                   factory: ServiceFactory = Depends(get_factory)):
@@ -270,27 +402,73 @@ def grant_project(project_id: str,
 
     msg = factory.enterprise.grant_project(
         enterprise_id=current_user["userId"],
-        project_id=project_id,
+        project_id=projectId,
         description=body.description,
+        amount=body.amount,
         dao_grant=factory.dao
     )
     return {"message": msg}
 
 
-@router.post("/projects/{project_id}/fund-requests", status_code=201)
-def fund_request(project_id: str,
+@router.get("/fund-requests")
+def get_fund_requests(current_user: dict = Depends(get_current_user),
+                      factory: ServiceFactory = Depends(get_factory)):
+    """
+    Expert: lấy fund requests của project mình tạo
+    Foundation: lấy tất cả fund requests gửi đến mình
+    """
+    col = factory.dao._get_collection("fundRequests")
+    uid = current_user["userId"]
+    if current_user["role"] == "expert":
+        docs = list(col.find({"requestBy": uid}))
+    else:
+        docs = list(col.find({"foundID": uid}))
+    for d in docs: d.pop("_id", None)
+    return docs
+
+
+@router.post("/projects/{projectId}/fund-requests", status_code=201)
+def fund_request(projectId: str,
                  body: FundRequestBody,
                  current_user: dict = Depends(get_current_user),
                  factory: ServiceFactory = Depends(get_factory)):
     if current_user["role"] != "expert":
         raise HTTPException(403, "Chỉ Expert (project owner) mới có thể gửi fund request")
 
-    # Kiểm tra đúng owner
-    project = factory.project.get_by_id(project_id)
+    project = factory.project.get_by_id(projectId)
     if not project:
         raise HTTPException(404, "Project không tồn tại")
     if project.get("createBy") != current_user["userId"]:
-        raise HTTPException(403, "Bạn không phải owner của project này")
+        raise HTTPException(403, "Chỉ owner của project mới có thể call fund")
 
-    msg = factory.project.assign_funding(project_id, body.found_id)
-    return {"message": msg}
+    import uuid
+    req_id = str(uuid.uuid4())[:8]
+    factory.dao._get_collection("fundRequests").insert_one({
+        "requestID":  req_id,
+        "projectID":  projectId,
+        "projectName": project.get("name", ""),
+        "requestBy":  current_user["userId"],
+        "foundID":    body.found_id,
+        "status":     "pending",
+        "createdAt":  __import__("datetime").datetime.utcnow().isoformat()
+    })
+
+    # Cũng lưu FoundID vào project để backward compat
+    factory.project.assign_funding(projectId, body.found_id)
+    return {"message": f"Đã gửi fund request tới {body.found_id}", "requestID": req_id}
+
+
+@router.patch("/fund-requests/{requestId}/reject")
+def reject_fund_request(requestId: str,
+                        current_user: dict = Depends(get_current_user),
+                        factory: ServiceFactory = Depends(get_factory)):
+    if current_user["role"] not in ("foundation", "funding"):
+        raise HTTPException(403, "Chỉ Foundation mới có thể từ chối")
+    col = factory.dao._get_collection("fundRequests")
+    req = col.find_one({"requestID": requestId})
+    if not req:
+        raise HTTPException(404, "Request không tồn tại")
+    if req["foundID"] != current_user["userId"]:
+        raise HTTPException(403, "Request này không thuộc foundation của bạn")
+    col.update_one({"requestID": requestId}, {"$set": {"status": "rejected"}})
+    return {"message": "Đã từ chối fund request"}

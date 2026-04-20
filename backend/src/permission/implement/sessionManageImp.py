@@ -3,10 +3,12 @@ import time
 import uuid
 import json
 import os
+import threading
 
 from permission.interface.sessionManage import SessionManage
 
 SESSION_FILE = "sessions.json"   # file dùng chung giữa 3 server
+lock = threading.Lock()
 
 class SessionManageImpl(SessionManage):
 
@@ -28,9 +30,11 @@ class SessionManageImpl(SessionManage):
         with open(SESSION_FILE, "r") as f:
             return json.load(f)
 
+
     def _save(self, sessions: dict):
-        with open(SESSION_FILE, "w") as f:
-            json.dump(sessions, f)
+        with lock:
+            with open(SESSION_FILE, "w") as f:
+                json.dump(sessions, f)
 
     def createsession(self, userId: str, role: str = "unknown") -> str:
         token = hashlib.sha256(
@@ -52,10 +56,16 @@ class SessionManageImpl(SessionManage):
             return None
 
         data = sessions[session]
+
         if time.time() > data["expiresAt"]:
             del sessions[session]
             self._save(sessions)
             return None
+
+        # 🔥 refresh session mỗi request
+        data["expiresAt"] = time.time() + self.session_lifetime
+        sessions[session] = data
+        self._save(sessions)
 
         return {"userId": data["userId"], "role": data["role"]}
 

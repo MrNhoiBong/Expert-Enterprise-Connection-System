@@ -53,7 +53,7 @@ class FoundationService:
                 "founder":  founder,
             }
         )
-        self.dao.collections[self.col_funding].insert_one(new_fund.data)
+        self.dao._get_collection(self.col_funding).insert_one(new_fund.data)
         return f"Tạo quỹ '{fund_name}' thành công"
 
     # ===== Lấy projects được fund (CALL_FUND) =====

@@ -22,4 +22,3 @@ class DataDAO(BaseDAO[Data, dict]):
     @abstractmethod
     def show_collections(self) -> list:
         pass
-

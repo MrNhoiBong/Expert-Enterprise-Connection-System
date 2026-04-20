@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response, Request
 from pydantic import BaseModel, model_validator
 from api.deps import get_factory, get_current_user
 from businessLogic.serviceFactory import ServiceFactory
@@ -120,7 +120,8 @@ def login(body: LoginRequest,
         value=result["token"],
         httponly=True,       # không cho JS đọc
         max_age=3600,        # 1 giờ
-        samesite="lax"
+        samesite="lax",
+        secure= False       # True nếu dùng HTTPS"
     )
     return {
         "message": "Đăng nhập thành công",
@@ -132,13 +133,20 @@ def login(body: LoginRequest,
 # ===== Logout =====
 
 @router.post("/logout")
-def logout(response: Response,
-           current_user: dict = Depends(get_current_user),
-           factory: ServiceFactory = Depends(get_factory)):
+def logout(
+    request: Request,
+    response: Response,
+    factory: ServiceFactory = Depends(get_factory)
+):
+    token = request.cookies.get("session")
 
-    factory.auth.logout(current_user.get("token", ""))
+    if token:
+        factory.auth.logout(token)
+
+    # 🔥 xoá cookie ở browser
     response.delete_cookie("session")
-    return {"message": "Đăng xuất thành công"}
+
+    return {"message": "Logout thành công"}
 
 
 # ===== Change Username =====

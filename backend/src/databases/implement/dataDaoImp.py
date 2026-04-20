@@ -16,8 +16,9 @@ class DataDAOImp(DataDAO):
         return list(self.collections.keys())
 
     def _get_collection(self, name: str):
+        # Tự thêm collection mới nếu chưa có (MongoDB tạo lazy)
         if name not in self.collections:
-            raise ValueError(f"Collection '{name}' không tồn tại trong database")
+            self.collections[name] = self.db[name]
         return self.collections[name]
 
     def _clean_doc(self, doc: dict) -> dict:
@@ -108,6 +109,14 @@ class DataDAOImp(DataDAO):
         return None
 
     # ===== Extra operation =====
+
+    def get_expert_skills(self, expert_id: str) -> list:
+        """Lấy danh sách skills của expert theo expertID"""
+        col  = self._get_collection("experts")
+        doc  = col.find_one({"expertID": expert_id}, {"skills": 1, "_id": 0})
+        if doc and isinstance(doc.get("skills"), list):
+            return doc["skills"]
+        return []
 
     def showinfo(self) -> str:
         return self.database_info

@@ -1,6 +1,5 @@
 from databases.interfaceDao.dataDao import DataDAO
 
-
 class EnterpriseService:
 
     def __init__(self, dao: DataDAO):
@@ -43,27 +42,21 @@ class EnterpriseService:
     # ===== Grant project =====
 
     def grant_project(self, enterprise_id: str, project_id: str,
-                      description: str, dao_grant) -> str:
+                      description: str, dao_grant, amount: float = 0.0) -> str:
         from databases.domain.data import Data
-        import datetime
-
-        existing = dao_grant.get(
-            collection_name="grant",
-            enterprise_id=enterprise_id,
-            project_id=project_id
-        )
-        if existing:
-            return "Enterprise đã grant project này rồi"
+        import datetime, uuid
 
         new_grant = Data(
             id=None,
             data={
+                "grantID":      str(uuid.uuid4())[:8],
                 "enterpriseID": enterprise_id,
                 "projectID":    project_id,
                 "status":       "pending",
                 "grantDate":    datetime.date.today().isoformat(),
-                "description":  description
+                "description":  description,
+                "amount":       amount,
             }
         )
-        dao_grant.collections["grant"].insert_one(new_grant.data)
-        return "Grant project thành công"
+        dao_grant._get_collection("grant").insert_one(new_grant.data)
+        return f"Grant ${amount:,.0f} cho project {project_id} thành công"

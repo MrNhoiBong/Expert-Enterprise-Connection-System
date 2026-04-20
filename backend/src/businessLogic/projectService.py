@@ -31,29 +31,18 @@ class ProjectService:
         next_num = len(all_projects) + 1
         project_id = f"PRJ{str(next_num).zfill(3)}"
 
-        new_project = Data(
-            id=project_id,
-            data={
-                "projectID":       project_id,
-                "createBy":        expert_id,
-                "createDate":      datetime.date.today().isoformat(),
-                "name":            name,
-                "status":          "Planning",
-                "projectTimeline": {
-                    "start_date": start_date,
-                    "end_date":   end_date
-                },
-                "description": description
-            }
-        )
-        self.dao.collections["expertParticipate"].insert_one({
-            "expertID":  expert_id,
-            "projectID": project_id,
-            "role":      "owner",
-            "joinDate":  datetime.date.today().isoformat(),
-            "status":    "active"
-        })
+        doc = {
+            "projectID":   project_id,
+            "createBy":    expert_id,
+            "createDate":  datetime.date.today().isoformat(),
+            "name":        name,
+            "status":      "Planning",
+            "start_date":  start_date,
+            "end_date":    end_date,
+            "description": description
+        }
 
+        self.dao._get_collection(self.col).insert_one(doc)
         return project_id
 
     def update_status(self, project_id: str, new_status: str) -> str:
