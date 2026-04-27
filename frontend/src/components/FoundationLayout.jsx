@@ -71,10 +71,6 @@ export default function FoundationLayout({ children, activeKey }) {
             </aside>
 
             <header className="topbar">
-                <div className="topbar-search">
-                    <span className="ms">search</span>
-                    <input placeholder="Search funds, projects, requests..." />
-                </div>
                 <div className="topbar-right">
                     <button className="topbar-icon-btn">
                         <span className="ms">notifications</span>

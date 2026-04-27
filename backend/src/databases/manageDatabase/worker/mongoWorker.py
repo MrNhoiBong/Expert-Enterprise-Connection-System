@@ -38,3 +38,20 @@ class MongoWorker(DAOWorker):
 
         else:
             raise ValueError("Unknown event")
+
+        # =========================
+    # 5.1 EXPERT SKILL LIST
+    # =========================
+    print("\n===== EXPERT SKILL LIST =====")
+    # Lấy tất cả experts trước
+    experts_col = db["experts"]
+    experts = list(experts_col.find({}, {"expertID": 1, "name": 1, "skills": 1, "_id": 0}))
+    if not experts:
+        print("❌ No experts found")
+    else:
+        for e in experts:
+            expert_id = e.get("expertID", "?")
+            name      = e.get("name", "Unknown")
+            skills    = mongoDao.get_expert_skills(expert_id)
+            skills_str = ", ".join(skills) if skills else "— no skills"
+            print(f"  [{expert_id}] {name}: {skills_str}")

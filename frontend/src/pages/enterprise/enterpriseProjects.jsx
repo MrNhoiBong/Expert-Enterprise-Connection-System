@@ -166,57 +166,83 @@ export default function EnterpriseProjects() {
                         })
                 }
 
-                {/* ── Grant Modal ── */}
-                {showGrant && (
-                    <div className="modal-overlay" onClick={e => e.target === e.currentTarget && setShowGrant(null)}>
-                        <form className="modal" onSubmit={handleGrant}>
-                            <div className="modal-title">Grant Project — {showGrant.name}</div>
-
-                            {/* Amount */}
-                            <div className="input-group">
-                                <label className="input-label">Grant Amount (USD) *</label>
-                                <div style={{ position: 'relative' }}>
-                                    <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', fontSize: 14, fontWeight: 700, color: T.outline }}>$</span>
-                                    <input className="input-field" style={{ paddingLeft: 28 }}
-                                        type="number" min="1" step="0.01" required
-                                        placeholder="e.g. 50000"
-                                        value={grantForm.amount}
-                                        onChange={e => setGrantForm({ ...grantForm, amount: e.target.value })} />
-                                </div>
-                                {grantForm.amount > 0 && (
-                                    <p style={{ fontSize: 11, color: T.primary, marginTop: 4, fontWeight: 600 }}>
-                                        = ${parseFloat(grantForm.amount).toLocaleString()} USD
-                                    </p>
-                                )}
-                            </div>
-
-                            {/* Description */}
-                            <div className="input-group">
-                                <label className="input-label">Grant Description *</label>
-                                <textarea className="input-field" rows={3} style={{ resize: 'none' }} required
-                                    placeholder="Describe the purpose and scope of this grant..."
-                                    value={grantForm.description}
-                                    onChange={e => setGrantForm({ ...grantForm, description: e.target.value })} />
-                            </div>
-
-                            {/* Summary */}
-                            {grantForm.amount && grantForm.description && (
-                                <div style={{ background: T.primaryFixed, borderRadius: 10, padding: '10px 14px', marginBottom: 8, fontSize: 12 }}>
-                                    <span style={{ fontWeight: 700, color: T.primary }}>${parseFloat(grantForm.amount).toLocaleString()}</span>
-                                    <span style={{ color: T.outline }}> → {showGrant.name} · by {profile?.company_name || profile?.enterpriseID}</span>
-                                </div>
-                            )}
-
-                            <div className="modal-actions">
-                                <button type="button" className="btn-cancel" onClick={() => setShowGrant(null)}>Cancel</button>
-                                <button type="submit" className="btn btn-primary" style={{ flex: 2 }} disabled={saving}>
-                                    {saving ? 'Submitting...' : <><span className="ms ms-sm">send</span> Confirm Grant</>}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                )}
             </div>
+            {/* ── Grant Modal ── */}
+            {showGrant && (
+                <div className="modal-overlay" onClick={e => e.target === e.currentTarget && setShowGrant(null)}>
+                    <form className="modal" onSubmit={handleGrant}>
+
+                        {/* Header */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+                            <div style={{ width: 44, height: 44, borderRadius: 12, background: T.primaryFixed, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                <span className="ms ms-fill" style={{ color: T.primary, fontSize: 22 }}>monetization_on</span>
+                            </div>
+                            <div>
+                                <div className="modal-title" style={{ marginBottom: 2 }}>Grant Project</div>
+                                <div style={{ fontSize: 13, color: T.onSurfaceVariant }}>{showGrant.name}</div>
+                            </div>
+                        </div>
+
+                        {/* Project info pill */}
+                        <div style={{ background: T.surfaceContainerLow, borderRadius: 10, padding: '10px 14px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10, fontSize: 12 }}>
+                            <span className="ms ms-sm" style={{ color: T.outline }}>folder_special</span>
+                            <span style={{ fontWeight: 600, color: T.onSurface }}>{showGrant.projectID}</span>
+                            <span style={{ color: T.outline }}>·</span>
+                            <span style={{ color: T.outline }}>{showGrant.status || 'Planning'}</span>
+                            <span style={{ color: T.outline, marginLeft: 'auto' }}>by {showGrant.createBy}</span>
+                        </div>
+
+                        {/* Amount */}
+                        <div className="input-group">
+                            <label className="input-label">Grant Amount (USD) *</label>
+                            <div style={{ position: 'relative' }}>
+                                <span style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', fontSize: 14, fontWeight: 700, color: T.outline }}>$</span>
+                                <input className="input-field" style={{ paddingLeft: 28 }}
+                                    type="number" min="1" max="999999999" step="0.01" required
+                                    placeholder="e.g. 50000"
+                                    value={grantForm.amount}
+                                    onChange={e => setGrantForm({ ...grantForm, amount: e.target.value })} />
+                            </div>
+                            {grantForm.amount > 0 && (
+                                <p style={{ fontSize: 11, color: T.primary, marginTop: 4, fontWeight: 600 }}>
+                                    = ${parseFloat(grantForm.amount).toLocaleString()} USD
+                                </p>
+                            )}
+                        </div>
+
+                        {/* Description */}
+                        <div className="input-group">
+                            <label className="input-label">Grant Description *</label>
+                            <textarea className="input-field" rows={4} style={{ resize: 'none' }} required
+                                placeholder="Describe the purpose and scope of this grant..."
+                                value={grantForm.description}
+                                onChange={e => setGrantForm({ ...grantForm, description: e.target.value })} />
+                        </div>
+
+                        {/* Summary preview */}
+                        {grantForm.amount > 0 && grantForm.description && (
+                            <div style={{ background: T.primaryFixed, borderRadius: 10, padding: '12px 14px', marginBottom: 4, fontSize: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
+                                <span className="ms ms-sm ms-fill" style={{ color: T.primary }}>check_circle</span>
+                                <span>
+                                    <span style={{ fontWeight: 700, color: T.primary }}>${parseFloat(grantForm.amount).toLocaleString()} USD</span>
+                                    <span style={{ color: T.outline }}> will be granted to </span>
+                                    <span style={{ fontWeight: 600, color: T.onSurface }}>{showGrant.name}</span>
+                                </span>
+                            </div>
+                        )}
+
+                        <div className="modal-actions">
+                            <button type="button" className="btn-cancel" onClick={() => setShowGrant(null)}>Cancel</button>
+                            <button type="submit" className="btn btn-primary" style={{ flex: 2 }} disabled={saving}>
+                                {saving
+                                    ? <><div style={{ width: 13, height: 13, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: 'white', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} /> Submitting...</>
+                                    : <><span className="ms ms-sm">send</span> Confirm Grant</>
+                                }
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )}
         </EnterpriseLayout>
     )
 }

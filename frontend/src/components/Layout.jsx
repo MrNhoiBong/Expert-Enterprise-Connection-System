@@ -46,6 +46,8 @@ export default function EENLayout({ children, activeKey }) {
             bizApi.getInvitations().then(d => {
                 if (mounted && Array.isArray(d)) {
                     setInvitations(d)
+                    const myPending = d.filter(inv => inv.status === 'pending' && inv.invitedUser === userId)
+                    console.log('[Notif] userId:', userId, '| total:', d.length, '| pending for me:', myPending.length, '| invitedUsers:', d.map(i => i.invitedUser))
                 }
             })
         }
@@ -124,10 +126,6 @@ export default function EENLayout({ children, activeKey }) {
 
             {/* ── Top bar ── */}
             <header className="topbar">
-                <div className="topbar-search">
-                    <span className="ms">search</span>
-                    <input placeholder="Search experts, projects..." />
-                </div>
                 <div className="topbar-right">
 
                     {/* ── Bell with dropdown ── */}

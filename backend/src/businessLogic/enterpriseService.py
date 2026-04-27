@@ -1,4 +1,6 @@
 from databases.interfaceDao.dataDao import DataDAO
+from databases.domain.data import Data
+import datetime, uuid
 
 class EnterpriseService:
 
@@ -43,8 +45,7 @@ class EnterpriseService:
 
     def grant_project(self, enterprise_id: str, project_id: str,
                       description: str, dao_grant, amount: float = 0.0) -> str:
-        from databases.domain.data import Data
-        import datetime, uuid
+
 
         new_grant = Data(
             id=None,

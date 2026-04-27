@@ -82,10 +82,6 @@ export default function EnterpriseLayout({ children, activeKey }) {
 
             {/* ── Top bar ── */}
             <header className="topbar">
-                <div className="topbar-search">
-                    <span className="ms">search</span>
-                    <input placeholder="Search experts, projects, grants..." />
-                </div>
                 <div className="topbar-right">
                     <button className="topbar-icon-btn">
                         <span className="ms">notifications</span>

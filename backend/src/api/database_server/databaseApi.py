@@ -139,23 +139,33 @@ OLLAMA_MODEL = "llama3:8b"
 
 def suggest_skills_from_ai(description: str, expert_skills: list) -> list:
     """
-    Gửi description + skill list của expert lên Ollama llama3:8b,
-    nhận về danh sách skill phù hợp cho project.
+    Gọi Ollama llama3:8b gợi ý skills cho project.
+    - Nếu expert có skills: chọn skills phù hợp từ danh sách có sẵn
+    - Nếu expert chưa có skills: tự gợi ý skills từ description
     Non-blocking — lỗi thì trả [] không crash API.
     """
     import json, urllib.request, urllib.error
 
-    skills_str = ", ".join(expert_skills) if expert_skills else "No skills listed"
-
-    prompt = (
-        "You are a project skill matcher. "
-        "Given a project description and an expert's skill list, "
-        "return ONLY a JSON array (max 5 items) of the most relevant skills "
-        "from the expert's list. No explanation, no markdown, just the JSON array.\n\n"
-        f"Project description: {description}\n"
-        f"Expert skills: {skills_str}\n\n"
-        "Example output: [\"Python\", \"FastAPI\", \"MongoDB\"]"
-    )
+    if expert_skills:
+        skills_str = ", ".join(expert_skills)
+        prompt = (
+            "You are a project skill matcher. "
+            "Given a project description and a list of available skills in the system, "
+            "return ONLY a JSON array (max 10 items) of the most relevant skills "
+            "from the available list that match the project needs. "
+            "No explanation, no markdown, just the JSON array.\n\n"
+            f"Project description: {description}\n"
+            f"Available skills in system: {skills_str}\n\n"
+            "Example output: [\"Python\", \"FastAPI\", \"MongoDB\"]"
+        )
+    else:
+        prompt = (
+            "You are a tech skill recommender. "
+            "Given a project description, suggest the most relevant technical skills needed. "
+            "Return ONLY a JSON array of max 5 skill names. No explanation, no markdown.\n\n"
+            f"Project description: {description}\n\n"
+            "Example output: [\"Python\", \"FastAPI\", \"MongoDB\"]"
+        )
 
     try:
         payload = json.dumps({
@@ -214,13 +224,24 @@ async def create_project(body: ProjectCreateRequest,
         end_date=body.end_date
     )
 
-    # Lấy danh sách skill của expert qua DAO (không query trực tiếp trong router)
-    expert_skills = factory.dao.get_expert_skills(current_user["userId"])
+    # Lấy TẤT CẢ skills unique từ toàn bộ experts trong hệ thống
+    # → AI chọn skills phù hợp với project description từ pool này
+    all_experts = factory.dao._get_collection("experts").find(
+        {}, {"skills": 1, "_id": 0}
+    )
+    all_skills_pool = list({
+        skill
+        for doc in all_experts
+        for skill in (doc.get("skills") or [])
+        if isinstance(skill, str) and skill.strip()
+    })
 
-    # Gọi AI gợi ý skill phù hợp với description (non-blocking — lỗi thì bỏ qua)
+    print(f"[AI] Skills pool ({len(all_skills_pool)}): {all_skills_pool}")
+
+    # Gọi AI gợi ý skills phù hợp với description từ pool toàn hệ thống
     suggested_skills = []
-    if body.description and expert_skills:
-        suggested_skills = suggest_skills_from_ai(body.description, expert_skills)
+    if body.description:
+        suggested_skills = suggest_skills_from_ai(body.description, all_skills_pool)
 
     # Gắn suggested_skills vào project nếu AI trả về kết quả
     if suggested_skills:

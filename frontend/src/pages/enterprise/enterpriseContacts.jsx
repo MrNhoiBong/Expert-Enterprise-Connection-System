@@ -289,7 +289,7 @@ export default function EnterpriseContacts() {
                                                 </div>
                                             )}
                                             <div style={{ maxWidth: '65%' }}>
-                                                <div style={{ background: isMe ? T.primary : T.surfaceContainerLow, color: isMe ? 'white' : T.onSurface, padding: '11px 16px', borderRadius: isMe ? '16px 16px 4px 16px' : '16px 16px 16px 4px', fontSize: 13, lineHeight: 1.6 }}>
+                                                <div style={{ background: isMe ? T.primary : T.surfaceContainerLow, color: isMe ? 'white' : T.onSurface, padding: '11px 16px', borderRadius: isMe ? '16px 16px 4px 16px' : '16px 16px 16px 4px', fontSize: 13, lineHeight: 1.6, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
                                                     {m.text}
                                                 </div>
                                                 <div style={{ fontSize: 10, color: T.outline, marginTop: 3, textAlign: isMe ? 'right' : 'left' }}>{fmtTime(m.createdAt)}</div>

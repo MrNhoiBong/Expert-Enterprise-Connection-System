@@ -142,40 +142,40 @@ export default function EnterpriseDiscovery() {
                         </div>
                     )}
 
-                {/* Contact Modal */}
-                {selected && (
-                    <div className="modal-overlay" onClick={e => e.target === e.currentTarget && setSelected(null)}>
-                        <form className="modal" onSubmit={handleContact}>
-                            <div className="modal-title">Contact {selected.name}</div>
-
-                            {/* Expert info */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px', background: T.primaryFixed, borderRadius: 10, marginBottom: 16 }}>
-                                <div style={{ width: 38, height: 38, borderRadius: '50%', background: T.primary, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
-                                    {selected.name.substring(0, 2).toUpperCase()}
-                                </div>
-                                <div>
-                                    <div style={{ fontWeight: 700, fontSize: 13 }}>{selected.name}</div>
-                                    <div style={{ fontSize: 11, color: T.outline }}>{selected.expertID} · {Array.isArray(selected.skills) ? selected.skills[0] : ''}</div>
-                                </div>
-                            </div>
-
-                            <div className="input-group">
-                                <label className="input-label">Message</label>
-                                <textarea className="input-field" rows={4} required style={{ resize: 'none' }}
-                                    placeholder="Introduce your organization and the engagement opportunity..."
-                                    value={msg} onChange={e => setMsg(e.target.value)} />
-                            </div>
-
-                            <div className="modal-actions">
-                                <button type="button" className="btn-cancel" onClick={() => setSelected(null)}>Cancel</button>
-                                <button type="submit" className="btn btn-primary" style={{ flex: 2 }} disabled={sending}>
-                                    {sending ? 'Sending...' : 'Send Message'}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                )}
             </div>
+            {/* Contact Modal */}
+            {selected && (
+                <div className="modal-overlay" onClick={e => e.target === e.currentTarget && setSelected(null)}>
+                    <form className="modal" onSubmit={handleContact}>
+                        <div className="modal-title">Contact {selected.name}</div>
+
+                        {/* Expert info */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 14px', background: T.primaryFixed, borderRadius: 10, marginBottom: 16 }}>
+                            <div style={{ width: 38, height: 38, borderRadius: '50%', background: T.primary, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
+                                {selected.name.substring(0, 2).toUpperCase()}
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 700, fontSize: 13 }}>{selected.name}</div>
+                                <div style={{ fontSize: 11, color: T.outline }}>{selected.expertID} · {Array.isArray(selected.skills) ? selected.skills[0] : ''}</div>
+                            </div>
+                        </div>
+
+                        <div className="input-group">
+                            <label className="input-label">Message</label>
+                            <textarea className="input-field" rows={4} required style={{ resize: 'none' }}
+                                placeholder="Introduce your organization and the engagement opportunity..."
+                                value={msg} onChange={e => setMsg(e.target.value)} />
+                        </div>
+
+                        <div className="modal-actions">
+                            <button type="button" className="btn-cancel" onClick={() => setSelected(null)}>Cancel</button>
+                            <button type="submit" className="btn btn-primary" style={{ flex: 2 }} disabled={sending}>
+                                {sending ? 'Sending...' : 'Send Message'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )}
         </EnterpriseLayout>
     )
 }

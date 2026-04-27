@@ -69,7 +69,7 @@ export default function ExpertProjects() {
                             <span className="ms ms-sm">filter_list</span> Filter
                         </button>
                         <button className="btn btn-primary" onClick={() => setModal(true)}>
-                            New Proposal <span className="ms ms-sm">arrow_forward</span>
+                            New Project <span className="ms ms-sm">arrow_forward</span>
                         </button>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ export default function ExpertProjects() {
                             <button type="submit" className="btn btn-primary" style={{ flex: 2 }} disabled={saving}>
                                 {saving
                                     ? <><div style={{ width: 13, height: 13, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: 'white', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} /> Analyzing with AI...</>
-                                    : <>Create Proposal <span className="ms ms-sm">arrow_forward</span></>
+                                    : <>Create Project <span className="ms ms-sm">arrow_forward</span></>
                                 }
                             </button>
                         </div>

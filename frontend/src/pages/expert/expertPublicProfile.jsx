@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import EENLayout from '../../components/Layout'
+import EnterpriseLayout from '../../components/EnterpriseLayout'
+import FoundationLayout from '../../components/FoundationLayout'
 import { dbApi, bizApi } from '../../api/Api.js'
 import { T } from '../../styles/theme.js'
 
 export default function ExpertPublicProfile({ type = 'expert' }) {
     const { id } = useParams()
     const navigate = useNavigate()
+    const location = useLocation()
+    // Detect layout theo URL prefix
+    const Layout = location.pathname.startsWith('/enterprise')
+        ? EnterpriseLayout
+        : location.pathname.startsWith('/foundation')
+            ? FoundationLayout
+            : EENLayout
+    const activeKey = 'discovery'
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [contact, setContact] = useState(false)
@@ -31,21 +41,21 @@ export default function ExpertPublicProfile({ type = 'expert' }) {
     }
 
     if (loading) return (
-        <EENLayout activeKey="discovery">
+        <Layout activeKey={activeKey}>
             <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 300, gap: 12, color: T.outline }}>
                 <div style={{ width: 20, height: 20, border: `2px solid ${T.outlineVariant}`, borderTopColor: T.primary, borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
                 Loading profile...
             </div>
-        </EENLayout>
+        </Layout>
     )
 
     if (!data) return (
-        <EENLayout activeKey="discovery">
+        <Layout activeKey={activeKey}>
             <div className="page-inner">
                 <div className="empty-state"><span className="ms ms-xl">person_off</span><p>Profile not found.</p></div>
             </div>
-        </EENLayout>
+        </Layout>
     )
 
     const name = data.name || data.company_name || ''
@@ -53,7 +63,7 @@ export default function ExpertPublicProfile({ type = 'expert' }) {
     const skills = Array.isArray(data.skills) ? data.skills : []
 
     return (
-        <EENLayout activeKey="discovery">
+        <Layout activeKey={activeKey}>
             <div className="page-inner fade-up" style={{ maxWidth: 900 }}>
 
                 {/* Back */}
@@ -185,6 +195,6 @@ export default function ExpertPublicProfile({ type = 'expert' }) {
                     </form>
                 </div>
             )}
-        </EENLayout>
+        </Layout>
     )
 }

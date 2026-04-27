@@ -114,5 +114,20 @@ def main():
     manager.notify("get_all_urls", {"expires_hours": 24})
 
 
+# =========================
+    # 8. EXPERT SKILL LIST
+    # =========================
+    print("\n===== EXPERT SKILL LIST =====")
+    all_experts = list(db["experts"].find({}, {"expertID": 1, "name": 1, "_id": 0}))
+    if not all_experts:
+        print("❌ No experts found")
+    else:
+        for e in all_experts:
+            eid    = e.get("expertID", "?")
+            name   = e.get("name", "Unknown")
+            skills = mongoDao.get_expert_skills(eid)
+            print(f"  {eid} | {name:<20} | {skills if skills else '[]'}")
+
+
 if __name__ == "__main__":
     main()

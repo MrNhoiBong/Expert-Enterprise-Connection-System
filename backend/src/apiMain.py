@@ -22,6 +22,7 @@ LOCAL_IP = get_local_ip()
 ALLOWED_ORIGINS = [
     "http://localhost:6060",
     "http://127.0.0.1:6060",
+    "http://10.103.240.129:6060",
     f"http://{LOCAL_IP}:6060",   # IP LAN tự động
 ]
 

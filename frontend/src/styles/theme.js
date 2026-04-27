@@ -154,7 +154,7 @@ body {
   background: rgba(248,249,251,0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-end;
   padding: 0 32px;
   border-bottom: 1px solid rgba(0,52,111,0.06);
 }
@@ -334,7 +334,8 @@ body {
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(25,28,30,0.50);
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   z-index: 1000;
   padding: 24px 20px;
   overflow-y: auto;
@@ -346,6 +347,7 @@ body {
   box-shadow: 0 32px 64px rgba(0,52,111,0.14);
   animation: fadeUp 0.3s ease-out;
   flex-shrink: 0;
+  margin: auto;
 }
 .modal-title {
   font-family: 'Manrope', sans-serif;
